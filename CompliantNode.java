@@ -31,9 +31,13 @@ public class CompliantNode implements Node {
 
     public Set<Transaction> sendToFollowers() {
         // IMPLEMENT THIS
+    	return pendingTxs; 
     }
 
     public void receiveFromFollowees(Set<Candidate> candidates) {
         // IMPLEMENT THIS
+    	for(Candidate c : candidates) {
+    		pendingTxs.add(c.tx);
+    	}
     }
 }
